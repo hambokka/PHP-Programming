@@ -36,7 +36,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="logo" href="index.html"><img src="img/logo.svg" alt="Logo"></a>
+          <a class="logo" href="index.php"><img src="img/logo.svg" alt="Logo"></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -46,12 +46,37 @@
         </div><!--/.navbar-collapse -->
       </div>
     </div>
+
+    <?PHP
+    $current_month = date('m');
+
+    if($current_month < 3 || $current_month > 10)
+    {
+        // Winter
+        $bg_img_url = "img/header-bg.jpg";
+    }
+    elseif ($current_month > 2 && $current_month < 6)
+    {
+        // Spring
+        $bg_img_url = "http://www.sapporo.travel/cms/wp-content/uploads/2013/08/spring-1200x600.jpg";
+    }
+    elseif ($current_month > 5 && $current_month < 9)
+    {
+        // Atumn,..?
+        $bg_img_url = "https://img-wishbeen.akamaized.net/plan/1443576287413_10810562303_c104903399_k.jpg";
+    }
+    else
+    {
+        // summer
+        $bg_img_url = "https://img-wishbeen.akamaized.net/plan/1465579644774_23729044146_794a75b30b_k-1.jpg";
+    }
+    ?>
         
-    <header>
+    <header style =" background: url(<?PHP echo $bg_img_url; ?>) no-repeat center center;"
       <div class="container">
         <div class="row">
           <div class="col-xs-6">
-            <a href="index.html"><img src="img/logo.svg" alt="Logo"></a>
+            <a href="index.php"><img src="img/logo.svg" alt="Logo"></a>
           </div>
           <div class="col-xs-6 signin text-right navbar-nav">
             <a href="#pricing" class="scroll">Pricing</a>&nbsp; &nbsp;<a href="#">Sign in</a>
@@ -107,18 +132,18 @@
 		    <div class="row">
 			    <div class="col-sm-4 wow fadeIn" data-wow-delay="0.4s">
 				    <hr class="line purple">
-				    <h3>App Feature One Here</h3>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut est facilisis, eu elementum mi volutpat. Pellentesque ac tristique nisi.</p>
+				    <h3>생각을해봐도</h3>
+				    <p>스카이보다는 역시 코리아텍이죠?</p>
 			    </div>
 			    <div class="col-sm-4 wow fadeIn" data-wow-delay="0.8s">
 				    <hr  class="line blue">
-				    <h3>App Feature One Here</h3>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut est facilisis, eu elementum mi volutpat. Pellentesque ac tristique nisi.</p>
+				    <h3>생각하면할수록</h3>
+				    <p>스카이보다는 역시 코리아텍이죠??</p>
 			    </div>
 			    <div class="col-sm-4 wow fadeIn" data-wow-delay="1.2s">
 				    <hr  class="line yellow">
-				    <h3>App Feature One Here</h3>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut est facilisis, eu elementum mi volutpat. Pellentesque ac tristique nisi.</p>
+				    <h3>생각할것도없이</h3>
+				    <p>스카이보다는 역시 코리아텍이죠???</p>
 			    </div>
 		    </div>
 	    </div>

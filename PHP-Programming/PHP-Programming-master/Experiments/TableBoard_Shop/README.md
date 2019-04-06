@@ -44,29 +44,45 @@ Note:
     
 ## index.php 수정
 [여기에 index.php 를 어떻게 수정했는지, 설명을 작성하세요.]
-while($row = mysql_fetch_array($result))
-    {
-        echo("<tr align = 'center'>
-            <td>$row[date]</td>
-            <td>$row[order_id]</td>
-            <td>$row[name]</td>
-            <td>$row[price]</td>
-            <td>$row[quantity]</td>
-            <td>$row[quantity]*$row[price]</td>
-            </tr>
-            ");
-    }
+
+$sql = "select * from tableboard_shop";
+// sql 쿼리 실행
+$result = mysql_query($sql,$connect);
+
+mysql_connect를 사용하여 mysql에 접속한다.
+mysql_select_db를 사용하여 oty_db에 연결한다.
+$sql변수에 tableboard_shop 테이블의 모든 필드값을 가져오는 명령어를 저장한다.
+$result를 해당 $sql을 mysql에 입력하는 명령어로 저장한다.
 $row에 값이 더이상 들어오지 않을 때까지(모든 값을 가져오도록) 반복해서 row의 필드값들을 출력시킨다.
 
 ## board_form.php 수정
 [여기에 board_form.php 를 어떻게 수정했는지, 설명을 작성하세요.]
+mysql_connect를 사용하여 mysql에 접속한다.
+mysql_select_db를 사용하여 oty_db에 연결한다.
+$sql변수에 num번째 tableboard_shop 레코드를 가져오는 명령어를 저장한다.
+$result를 해당 $sql을 mysql에 입력하는 명령어로 저장한다.
+$row로 각 레코드를 순차적으로 가져오도록 한다.
+
+php 코드 echo()를 사용하여 각$row에서 가져온 필드값을 출력할 수 있도록 한다. 
 
 ## function
 ### insert.php 수정
 [여기에 insert.php 를 어떻게 수정했는지, 설명을 작성하세요.]
+mysql_connect를 사용하여 mysql에 접속한다.
+mysql_select_db를 사용하여 oty_db에 연결한다.
+입력받은 값들을 $_POST로 받아와 새로운 레코드를 만드는 명령어를 $sql에 저장한다.
+$result로 해당 명령어를 mysql에서 수행하도록 한다.
 
 ### update.php 수정
 [여기에 update.php 를 어떻게 수정했는지, 설명을 작성하세요.]
+mysql_connect를 사용하여 mysql에 접속한다.
+mysql_select_db를 사용하여 oty_db에 연결한다.
+입력받은 값들을 $_POST로 받아와 이미 있는 레코드를 수정하는 명령어를 $sql에 저장한다.
+$result로 해당 명령어를 mysql에서 수행하도록 한다.
 
 ### delete.php 수정
 [여기에 delete.php 를 어떻게 수정했는지, 설명을 작성하세요.]
+mysql_connect를 사용하여 mysql에 접속한다.
+mysql_select_db를 사용하여 oty_db에 연결한다.
+삭제 버튼을 눌렀던 화면에서의 primary key에 해당하는 num값을 $_GET으로 받아와 해당 레코드를 삭제하는 명령어를 $sql에 저장한다.
+$result로 해당 명령어를 mysql에서 수행하도록 한다.

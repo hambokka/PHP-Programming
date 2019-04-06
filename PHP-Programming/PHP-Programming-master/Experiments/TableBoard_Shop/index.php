@@ -6,16 +6,14 @@ $connect = mysql_connect("localhost","ohty","1231");
 // DB 선택
 mysql_select_db("oty_db", $connect);
 // sql 쿼리 string 생성
-$sql = "select * from user where name='$_POST[name]' and password='$_POST[password]'";
+$sql = "select * from tableboard_shop";
 // sql 쿼리 실행
 $result = mysql_query($sql);
 // 결과 row 값 가져오기!
-$row = mysql_fetch_array($result);
 
 if(!$row) {
     // 입력한 name 과 password 에 해당하는 결과 레코드가 없는 경우
     echo "<script> alert('회원 정보가 없거나, 비밀번호가 일치하지 않습니다.') </script>";
-    echo "<script> location.href = 'login_form.php' </script>";
 }
 ?>
 
@@ -65,7 +63,20 @@ if(!$row) {
                     <?php
                         # TODO : 아래 표시되는 내용을, MySQL 테이블에 있는 레코드로 대체하기!
                         # Note : column6 에 해당하는 Total 은 Price 값과 Quantity 값의 곱으로 표시!
+                    while($row = mysql_fetch_array($result))
+                    {
+                        echo("<tr align = 'center'>
+                            <td>$row[date]</td>
+                            <td>$row[order_id]</td>
+                            <td>$row[name]</td>
+                            <td>$row[price]</td>
+                            <td>$row[quantity]</td>
+                            <td>$row[quantity]*$row[price]</td>
+                            </tr>
+                            ");
+                    }
                     ?>
+                    <!--
                     <tr onclick="location.href = ('board_form.php?num=0')">
                         <td class="column1">2017-09-29 01:22</td>
                         <td class="column2">200398</td>
@@ -177,7 +188,7 @@ if(!$row) {
                         <td class="column4">$999.00</td>
                         <td class="column5">1</td>
                         <td class="column6">$999.00</td>
-                    </tr>
+                    </tr-->
 
                     </tbody>
                 </table>

@@ -33,7 +33,7 @@ Note:
     - ex) name -> char or varchar
     
     create table tableboard_shop(
-        -> num int not null,
+        -> num int not null auto_increment,
         -> date date,
         -> order_id char(20),
         -> name char(20),
@@ -44,6 +44,19 @@ Note:
     
 ## index.php 수정
 [여기에 index.php 를 어떻게 수정했는지, 설명을 작성하세요.]
+while($row = mysql_fetch_array($result))
+    {
+        echo("<tr align = 'center'>
+            <td>$row[date]</td>
+            <td>$row[order_id]</td>
+            <td>$row[name]</td>
+            <td>$row[price]</td>
+            <td>$row[quantity]</td>
+            <td>$row[quantity]*$row[price]</td>
+            </tr>
+            ");
+    }
+$row에 값이 더이상 들어오지 않을 때까지(모든 값을 가져오도록) 반복해서 row의 필드값들을 출력시킨다.
 
 ## board_form.php 수정
 [여기에 board_form.php 를 어떻게 수정했는지, 설명을 작성하세요.]

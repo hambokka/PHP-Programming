@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="9758f4cd-19b3-4714-9d17-a93c73d3c9ff" name="APMSETUP" url="http://localhost">
+      <webServer id="e66b3a98-0658-4a44-a14c-3d50e198551f" name="APMSETUP" url="http://localhost">
         <fileTransfer port="0" mountedRoot="C:\APM_Setup\htdocs" accessType="MOUNT" />
       </webServer>
     </option>

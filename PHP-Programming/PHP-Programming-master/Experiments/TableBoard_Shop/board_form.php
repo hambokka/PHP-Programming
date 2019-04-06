@@ -2,7 +2,22 @@
 #TODO: update form 인 경우, form 에 정보 표시
 if(isset($_GET[num])) {
     #TODO: MySQL 테이블에서, num에 해당하는 레코드 가져오기
+// MySQL 데이터베이스 연결
+    $connect = mysql_connect("localhost","ohty","1231");
+// DB 선택
+    mysql_select_db("oty_db", $connect);
+// sql 쿼리 string 생성
+    $sql = "select * from tableboard_shop where num='$_GET[num]'";
+// sql 쿼리 실행
+    $result = mysql_query($sql);
+// 결과 row 값 가져오기!
+    $row = mysql_fetch_array($result);
+    if(!$row) {
+        // 입력한 name 과 password 에 해당하는 결과 레코드가 없는 경우
+        echo "<script> alert('회원 정보가 없거나, 비밀번호가 일치하지 않습니다.') </script>";
+    }
 }
+
 ?>
 
 <!-- 출처 : https://colorlib.com/wp/template/responsive-table-v1/ -->
@@ -37,7 +52,7 @@ if(isset($_GET[num])) {
 			<a href="index.php" style="border: 1px; padding: 10px; background: #36304a; display: block; width: 100px; text-align: center; border-radius: 10px; margin-bottom: 5px;"> Back </a>
             <?php
                 if(isset($_GET[num])) {
-                    echo "<form method=\"POST\" action=\"function/update.php\">";
+                    echo "<form method=\"POST\" action=\"function/update.php?num=$_GET[num]\">";
                 } else {
                     echo "<form method=\"POST\" action=\"function/insert.php\">";
                 }
@@ -59,17 +74,17 @@ if(isset($_GET[num])) {
                             <?php
                             if(isset($_GET[num])) { //update 의 경우!
                                 ?>
-                                <td class="column1"> <input name="date" type="text" value="<? #TODO: 정보 표시 ?>" /> </td>
-                                <td class="column2"> <input name="order_id" type="number" value="<? #TODO: 정보 표시 ?>" /> </td>
-                                <td class="column3"> <input name="name" type="text" value="<?  #TODO: 정보 표시 ?>" /> </td>
-                                <td class="column4"> <input name="price" type="number" placeholder="$" style="text-align: right;" value="<? #TODO: 정보 표시 ?>" /> </td>
-                                <td class="column5"> <input name="quantity" type="number" value="<? #TODO: 정보 표시 ?>" style="text-align: right;" /> </td>
-                                <td class="column6"> $<span id="total"> <? #TODO: 정보 표시 ?> </span> </td>
+                                <td> <input name="date" type="date" value= <? echo($row[date]) ?> /> </td>
+                                <td> <input name="order_id" type="text" value=<? echo($row[order_id]) ?> /> </td>
+                                <td> <input name="name" type="text" value=<? echo($row[name]) ?> /> </td>
+                                <td> <input name="price" type="number" placeholder="$" style="text-align: right" value=<? echo($row[price]) ?> /> </td>
+                                <td> <input name="quantity" type="number"style="text-align: right"  value=<? echo($row[quantity]) ?> /> </td>
+                                <td> $<span id="total"> <? echo(($row[price])*($row[quantity])) ?></span> </td>
                                 <?php
                             } else {
                                 ?>
-                                <td class="column1"> <input name="date" type="text" /> </td>
-                                <td class="column2"> <input name="order_id" type="number" /> </td>
+                                <td class="column1"> <input name="date" type="date" /> </td>
+                                <td class="column2"> <input name="order_id" type="text" /> </td>
                                 <td class="column3"> <input name="name" type="text" /> </td>
                                 <td class="column4"> <input name="price" type="number" placeholder="$" style="text-align: right;" /> </td>
                                 <td class="column5"> <input name="quantity" type="number" value="1" style="text-align: right;" /> </td>

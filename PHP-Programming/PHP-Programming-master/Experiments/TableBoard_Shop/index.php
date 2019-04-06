@@ -8,13 +8,9 @@ mysql_select_db("oty_db", $connect);
 // sql 쿼리 string 생성
 $sql = "select * from tableboard_shop";
 // sql 쿼리 실행
-$result = mysql_query($sql);
+$result = mysql_query($sql,$connect);
 // 결과 row 값 가져오기!
 
-if(!$row) {
-    // 입력한 name 과 password 에 해당하는 결과 레코드가 없는 경우
-    echo "<script> alert('회원 정보가 없거나, 비밀번호가 일치하지 않습니다.') </script>";
-}
 ?>
 
 <!-- 출처 : https://colorlib.com/wp/template/responsive-table-v1/ -->
@@ -65,7 +61,7 @@ if(!$row) {
                         # Note : column6 에 해당하는 Total 은 Price 값과 Quantity 값의 곱으로 표시!
                     while($row = mysql_fetch_array($result))
                     {
-                        echo("<tr align = 'center'>
+                        echo("<tr onclick=\"location.href = ('board_form.php?num=$row[num]')\">
                             <td>$row[date]</td>
                             <td>$row[order_id]</td>
                             <td>$row[name]</td>

@@ -32,6 +32,16 @@ Note:
     - ex) price -> int
     - ex) name -> char or varchar
     
+    create table tableboard_shop(
+        -> num int not null,
+        -> date date,
+        -> order_id char(20),
+        -> name char(20),
+        -> price int,
+        -> quantity int,
+        -> primary key(num)
+        );
+    
 ## index.php 수정
 [여기에 index.php 를 어떻게 수정했는지, 설명을 작성하세요.]
 

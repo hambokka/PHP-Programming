@@ -26,13 +26,13 @@
     $connect = mysql_connect("localhost","ohty","1231");    // MySQL 데이터베이스 연결
     mysql_select_db("oty_db", $connect);         // DB 선택
     
-    //사용자가 검색한 값을 $_POST[search] boardz 테이블에서 찾는 코드
+* $_POST가 포함되어 있는 title값이 존재하는 레코드를 boardz 테이블에서 찾아오는 코드를 $sql에 저장한다.
     $sql="select image_url, title, contents from boardz where title like '%$_POST[search]%';"; 
     
     
     $result=mysql_query($sql);  
-    
-    $count = 1;         // 출력 횟수
+* 매 3번째마다 줄을 바꿔준다.
+    $count = 1;
     echo("<ul>");
     while($row=mysql_fetch_array($result))
     {
@@ -54,3 +54,13 @@
     echo("</ul>");
 
 cmd창에서 계정으로 로그인 하는것과 동시에 < boardz.sql 을 입력하여 해당  sql파일에 적혀있는 구문을 실행하도록 하였다.
+
+
+자 일단 검색했을 때에 나오는 사진묶음의 개수를 파악해야해
+그 후에 그 값을 3으로 나누고 그 나머지도 파악해야해
+ex) 7 -> 몫 2, 나머지 1 -> [3,2,2]개씩 존재하게됨
+ 4 -> 몫 1, 나머지 1 -> [2,1,1]개씩 존재
+ 2 -> 몫 0, 나머지 2 -> [1,1,0]개씩 존재
+ 5 -> 몫 1, 나머지 2 -> [2,2,1]개씩 존재
+ 6 -> 몫 2, 나머지 0 -> [2,2,2]개씩 존재
+ 

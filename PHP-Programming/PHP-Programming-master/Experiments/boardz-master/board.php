@@ -45,26 +45,48 @@
 
             $sql="select image_url, title, contents from boardz where title like '%$_POST[search]%';";
             $result=mysql_query($sql,$connect);
-
+            /**/
             $count = 1;
-        echo("<ul>");
-        while($row=mysql_fetch_array($result))
-        {
-            $count++;
-            echo("                   
-                <li>
+
+            echo("<ul>");
+            while($row=mysql_fetch_array($result))
+            {
+                $count++;
+                echo("
+                    <li>
+                        <h1>$row[title]</h1>
+                        $row[contents]
+                        <img src=$row[image_url] alt=\"demo image\"/>
+                    </li>
+                    ");
+
+                if($count%3 == 0){
+                    echo("</ul><ul>");
+                }
+            }
+            echo("</ul>");
+            /*
+            $count = 1;
+            echo("<li>");
+            while($row = mysql_fetch_array($result))
+            {
+                $count++;
+                echo("
+                <ul>
                     <h1>$row[title]</h1>
                     $row[contents]
-                    <img src=$row[image_url] alt=\"demo image\"/>
-                </li>        
-                ");
-
-            if($count%3 == 0){
-                echo("</ul><ul>");
+                    <img src = $row[image_url] alt = \"demo image\"/>
+                    </ul>
+                    ");
+                if($count%3 == 0)
+                {
+                    echo("</li><li>");
+                }
             }
-        }
-        echo("</ul>");
-        ?>
+            echo("</li>");
+*/
+
+            ?>
         </div-->
         <hr class="seperator">
     </div>

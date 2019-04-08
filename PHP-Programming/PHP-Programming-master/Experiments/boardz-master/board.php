@@ -47,6 +47,10 @@
             $result=mysql_query($sql,$connect);
             /**/
             $count = 1;
+            $scale = 0;
+            /*while($row = mysql_fetch_array($result)) {
+                $scale++;               // 검색된 사진들의 총 개수를 저장한다.
+            }*/
 
             echo("<ul>");
             while($row=mysql_fetch_array($result))

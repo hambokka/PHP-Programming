@@ -61,13 +61,14 @@ $result = mysql_query($sql,$connect);
                         # Note : column6 에 해당하는 Total 은 Price 값과 Quantity 값의 곱으로 표시!
                     while($row = mysql_fetch_array($result))
                     {
+                        $total = $row[quantity] * $row[price];
                         echo("<tr onclick=\"location.href = ('board_form.php?num=$row[num]')\">
                             <td>$row[date]</td>
                             <td>$row[order_id]</td>
                             <td>$row[name]</td>
-                            <td>$row[price]</td>
+                            <td>$$row[price]</td>
                             <td>$row[quantity]</td>
-                            <td>$row[quantity]*$row[price]</td>
+                            <td>$$total</td>
                             </tr>
                             ");
                     }

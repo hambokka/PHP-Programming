@@ -49,26 +49,45 @@
             $count = 0;
             $j = 0;
             $scale = 0;
-            /*while($row = mysql_fetch_array($result)) {
-                $scale++;               // 검색된 사진들의 총 개수를 저장한다.
-            }*/
 
+            /*while($rowa = mysql_fetch_array($result))
+            {
+                $scale++;
+                echo($scale);
+            }*/
             echo("<ul>");
             while($row=mysql_fetch_array($result))
             {
                 $count++;
-                $j++;
-                echo("<li>");
-                    if($row[title] != NULL){
-                    echo("<h1>$row[title]</h1>");
+
+                if($_POST[search] == NULL) {
+                    echo("<li>");
+                    if ($row[title] != NULL) {
+                        echo("<h1>$row[title]</h1>");
                     }
                     echo("$row[contents]<br>");
                     echo("<img src=$row[image_url] alt=\"demo image\"/>");
-                echo("</li>");
+                    echo("</li>");
 
-                if($count%2 == 0){
-                    if($j != 6) {
-                        echo("</ul><ul>");
+                    if ($count % 2 == 0) {
+                        if ($count != 6) {
+                            echo("</ul><ul>");
+                        }
+                    }
+                }
+                else{
+                    echo("<li>");
+                    if ($row[title] != NULL) {
+                        echo("<h1>$row[title]</h1>");
+                    }
+                    echo("$row[contents]<br>");
+                    echo("<img src=$row[image_url] alt=\"demo image\"/>");
+                    echo("</li>");
+                    echo("</ul>");
+                    if($row[title] != "sumo" && $row[title] != "summo")
+                        break;
+                    if($count != 3) {
+                        echo("<ul>");
                     }
                 }
             }

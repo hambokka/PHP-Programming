@@ -62,7 +62,7 @@
                     if($row[title] != NULL){
                     echo("<h1>$row[title]</h1>");
                     }
-                    echo("$row[contents]");
+                    echo("$row[contents]<br>");
                     echo("<img src=$row[image_url] alt=\"demo image\"/>");
                 echo("</li>");
 

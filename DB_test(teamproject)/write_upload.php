@@ -9,32 +9,32 @@ $sql = mq("insert into gesipan(Board_title,Board_writer,Board_contents,Board_pas
 <meta http-equiv="refresh" content="0 url=gesipan.php"/>
 
 <?php
-$connect = mysqli_connect("localhost", "ohty", "1231", "oty_db") or die("fail");
-
-$id = $_POST[name];                      //Writer
-$pw = $_POST[pw];                        //Password
-$title = $_POST[title];                  //Title
-$content = $_POST[content];              //Content
-$date = date('Y-m-d H:i:s');            //Date
-
-$URL = 'webt.php';                   //return URL
-
-
-$query = "insert into board (number,title, content, date, hit, id, password) 
-                        values(null,'$_POST[title]', '$_POST[content]', '$date',0, '$_POST[name]', '$_POST[pw]')";
-
-
-$result = $connect->query($query);
-if($result){
-    ?>                  <script>
-        alert("<?php echo "글이 등록되었습니다."?>");
-        location.replace("<?php echo $URL?>");
-    </script>
-    <?php
-}
-else{
-    echo "FAIL";
-}
-
-mysqli_close($connect);
-?>
+//$connect = mysqli_connect("localhost", "ohty", "1231", "oty_db") or die("fail");
+//
+//$id = $_POST[name];                      //Writer
+//$pw = $_POST[pw];                        //Password
+//$title = $_POST[title];                  //Title
+//$content = $_POST[content];              //Content
+//$date = date('Y-m-d H:i:s');            //Date
+//
+//$URL = 'webt.php';                   //return URL
+//
+//
+//$query = "insert into board (number,title, content, date, hit, id, password)
+//                        values(null,'$_POST[title]', '$_POST[content]', '$date',0, '$_POST[name]', '$_POST[pw]')";
+//
+//
+//$result = $connect->query($query);
+//if($result){
+//    ?><!--                  <script>-->
+<!--        alert("--><?php //echo "글이 등록되었습니다."?>//");
+//        location.replace("<?php //echo $URL?>//");
+//    </script>
+//    <?php
+//}
+//else{
+//    echo "FAIL";
+//}
+//
+//mysqli_close($connect);
+//?>

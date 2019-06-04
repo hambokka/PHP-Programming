@@ -57,7 +57,7 @@ include "db_connect.php"
             <tbody>
             <tr>
                 <td width="70"><?php echo $gesipan['Board_Num']; ?></td>
-                <td width="500"><a href=""><?php echo $Board_title;?></a></td>
+                <td width="500"><a href="read.php"><?php echo $Board_title;?></a></td>
                 <td width="120"><?php echo $gesipan['Board_writer']?></td>
                 <td width="100"><?php echo $gesipan['Board_genre']?></td>
                 <td width="100"><?php echo $gesipan['Board_views']; ?></td>

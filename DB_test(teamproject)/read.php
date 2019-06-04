@@ -6,15 +6,17 @@ include"db_connect.php";
 <head>
     <meta charset="UTF-8">
     <title>게시판</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
 <?php
-$bno = $_GET['Board_Num']; /* bno함수에 idx값을 받아와 넣음*/
-$Board_views = mysqli_fetch_array(mq("select * from board where Board_Num ='".$bno."'"));
-$Board_views = $Board_views['Board_views'] + 1;
-$fet = mq("update gesipan set Board_views = '".$Board_views"' where Board_Num = '".$bno."'");
-$sql = mq("select * from gesipan where Board_Num ='".$bno."'"); /* 받아온 idx값을 선택 */
+$bno = $_POST["Board_Num"]; /* bno함수에 idx값을 받아와 넣음*/
+echo $_GET["Board_Num"];
+echo "hello";
+$Board_views = mysqli_fetch_array(mq("select * from board where Board_Num ='\".$bno.\"'"));
+$Board_views = $Board_views["Board_views"] + 1;
+$fet = mq("update gesipan set Board_views = '\".$Board_views\"' where Board_Num = '\".$bno.\"'");
+$sql = mq("select * from gesipan where Board_Num ='\".$bno.\"'"); /* 받아온 idx값을 선택 */
 $gesipan = $sql->fetch_array();
 ?>
 <!-- 글 불러오기 -->

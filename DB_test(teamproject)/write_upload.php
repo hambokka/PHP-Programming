@@ -4,7 +4,7 @@
 include "db_connect.php";
 $date = date('Y-m-d');
 $sql = mq("insert into gesipan(Board_title,Board_writer,Board_contents,Board_password,Board_image)
- values('" . $_POST['title'] . "','" . $_POST['writer'] . "','" . $_POST['content'] . "','" . $_POST['password'] . "','" . $_POST['image'] . "')"); ?>
+ values('" . $_POST['title'] . "','" . $_POST['writer'] . "','" . $_POST['content'] . "','" . $_POST['pw'] . "','" . $_POST['image'] . "')"); ?>
 <script type="text/javascript">alert("글쓰기 완료되었습니다.");</script>
 <meta http-equiv="refresh" content="0 url=gesipan.php"/>
 

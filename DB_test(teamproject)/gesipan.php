@@ -77,15 +77,13 @@ include "db_connect.php"
                 }
                 ?>
                 <tbody>
-<!--                <tr onclick="location.href = (--><?// echo "read.php/num=$gesipan[Board_Num]"?>//)">
+                <!--<tr onclick="location.href = (<?/* echo "read.php/num=$gesipan[Board_Num]"*/?>//)">-->
                     <? echo("<tr onclick=\"location.href = ('read.php?Board_Num=$gesipan[Board_Num]')\"> ");?>
                     <? echo $gesipan[Board_Num];?>
                     <td width="70"><?php echo $gesipan['Board_Num']; ?></td>
 <!--                    <td width="500" name = "B_Num" value = "--><?// echo $gesipan[Board_Num];?><!--"><a href="read.php">--><?php //echo $Board_title;?><!--</a></td>-->
                     <td width="500"><? echo $gesipan[Board_title]; ?>
 <!--                        <input type="text" name ="Test2" value =--><?// echo $gesipan[Board_writer];?><!-- />-->
-
-<!--                                            <input type="submit" value = --><?// echo $gesipan[Board_title]?><!-- /></td>--></td>-->
 
 
 
@@ -101,46 +99,46 @@ include "db_connect.php"
             <a href="write.php"><button type="button" class="btn btn-default">글쓰기</button></a>
         </div>
         <div id="page_num">
-            <!--<ul>
+            <ul>
                 <?php
-/*                if($page <= 1)
+                if($page <= 1)
                 { //만약 page가 1보다 크거나 같다면
-                    echo "<li class='fo_re'>처음</li>"; //처음이라는 글자에 빨간색 표시
+                    echo "<li style='float: left; margin-left: 10px; text-align: center'>처음</li>"; //처음이라는 글자에 빨간색 표시
                 }else{
-                    echo "<li><a href='?page=1'>처음</a></li>"; //알니라면 처음글자에 1번페이지로 갈 수있게 링크
+                    echo "<li style='float: left; margin-left: 10px; text-align: center'><a href='?page=1'>처음</a></li>"; //알니라면 처음글자에 1번페이지로 갈 수있게 링크
                 }
                 if($page <= 1)
                 { //만약 page가 1보다 크거나 같다면 빈값
 
                 }else{
                     $pre = $page-1; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
-                    echo "<li><a href='?page=$pre'>이전</a></li>"; //이전글자에 pre변수를 링크한다. 이러면 이전버튼을 누를때마다 현재 페이지에서 -1하게 된다.
+                    echo "<li style='float: left; margin-left: 10px; text-align: center'><a href='?page=$pre'>이전</a></li>"; //이전글자에 pre변수를 링크한다. 이러면 이전버튼을 누를때마다 현재 페이지에서 -1하게 된다.
                 }
                 for($i=$block_start; $i<=$block_end; $i++){
                     //for문 반복문을 사용하여, 초기값을 블록의 시작번호를 조건으로 블록시작번호가 마지박블록보다 작거나 같을 때까지 $i를 반복시킨다
                     if($page == $i){ //만약 page가 $i와 같다면
-                        echo "<li class='fo_re'>[$i]</li>"; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
+                        echo "<li style='float: left; margin-left: 10px; text-align: center'>[$i]</li>"; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
                     }else{
-                        echo "<li><a href='?page=$i'>[$i]</a></li>"; //아니라면 $i
+                        echo "<li style='float: left; margin-left: 10px; text-align: center'><a href='?page=$i'>[$i]</a></li>"; //아니라면 $i
                     }
                 }
                 if($block_num >= $total_block){ //만약 현재 블록이 블록 총개수보다 크거나 같다면 빈 값
                 }else{
                     $next = $page + 1; //next변수에 page + 1을 해준다.
-                    echo "<li><a href='?page=$next'>다음</a></li>"; //다음글자에 next변수를 링크한다. 현재 4페이지에 있다면 +1하여 5페이지로 이동하게 된다.
+                    echo "<li style='float: left; margin-left: 10px; text-align: center'><a href='?page=$next'>다음</a></li>"; //다음글자에 next변수를 링크한다. 현재 4페이지에 있다면 +1하여 5페이지로 이동하게 된다.
                 }
                 if($page >= $total_page){ //만약 page가 페이지수보다 크거나 같다면
-                    echo "<li class='fo_re'>마지막</li>"; //마지막 글자에 긁은 빨간색을 적용한다.
+                    echo "<li style='float: left; margin-left: 10px; text-align: center' >마지막</li>"; //마지막 글자에 긁은 빨간색을 적용한다.
                 }else{
-                    echo "<li><a href='?page=$total_page'>마지막</a></li>"; //아니라면 마지막글자에 total_page를 링크한다.
+                    echo "<li style='float: left; margin-left: 10px; text-align: center'><a href='?page=$total_page'>마지막</a></li>"; //아니라면 마지막글자에 total_page를 링크한다.
                 }
-                */?>
-            </ul>-->
+                ?>
+            </ul>
         </div>
         <div class="text-center">
         <ul class="pagination pagination-lg"> <!--부트스트랩에서 제공하는 페이징 마법사(?)-->
             <?php
-            if($page <= 1) {
+/*            if($page <= 1) {
                 echo "<li>처음</li>";
             }
             else {
@@ -151,10 +149,10 @@ include "db_connect.php"
                 $pre = $page-1;
                 echo "<li><a href='?page=$pre'>이전</a></li>";
             }
-            ?>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
+            */?>
+<!--            <li><a href="#">1</a></li>-->
+<!--            <li><a href="#">2</a></li>-->
+<!--            <li><a href="#">3</a></li>-->
         </ul>
     </div>
 </div>
@@ -192,10 +190,10 @@ include "db_connect.php"
 <!---->
 <!--<h1 class="text-danger">이것은 게시판이다.</h1>-->
 <!---->
-<!--<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->-->
+<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
-<!--<!--<script src="js/jquery.min.js"></script> 위 js를 다운받아 폴더에 참조하였습니다. 이렇게 하는게 더 좋겠죠? -->-->
-<!--<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->-->
+<!--<script src="js/jquery.min.js"></script> 위 js를 다운받아 폴더에 참조하였습니다. 이렇게 하는게 더 좋겠죠? -->
+<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
 <!--<script src="js/bootstrap.min.js"></script>-->
 <!---->
 <!--<div class = "container">[게시판]-->
@@ -210,7 +208,7 @@ include "db_connect.php"
 <!--            <Td width="100">조회수</Td>-->
 <!--        </tr>-->
 <!--        </thead>-->
-<!--<!--        -->--><?php
+<!--        --><?php
 //        $connect = mysqli_connect("localhost","ohty","1231","oty_db");
 ////        $select_query = "select * from gesipan";
 ////        $result_set = mysqli_query($connect, $select_query);
@@ -268,7 +266,7 @@ include "db_connect.php"
 <!--    </Table>-->
 <!--    <a href="write.php"> <button class = "btn btn-primary pull-right">글쓰기</button></a>-->
 <!--    <div class="text-center">-->
-<!--        <ul class="pagination pagination-lg"> <!--부트스트랩에서 제공하는 페이징 마법사(?)-->-->
+<!--        <ul class="pagination pagination-lg"> 부트스트랩에서 제공하는 페이징 마법사(?)-->
 <!--            <li><a href="#">1</a></li>-->
 <!--            <li><a href="#">2</a></li>-->
 <!--            <li><a href="#">3</a></li>-->
@@ -276,7 +274,7 @@ include "db_connect.php"
 <!--    </div>-->
 <!--</div>-->
 <!---->
-버튼의 종류
+<!--버튼의 종류
 <button type="button" class="btn">Basic</button>
 <button type="button" class="btn btn-default">Default</button>
 <button type="button" class="btn btn-primary">Primary</button>
@@ -290,7 +288,7 @@ include "db_connect.php"
 <button type="button" class="btn btn-default btn-lg">Large</button>
 <button type="button" class="btn btn-default btn-md">Medium</button>
 <button type="button" class="btn btn-default btn-sm">Small</button>
-<button type="button" class="btn btn-default btn-xs">XSmall</button>
+<button type="button" class="btn btn-default btn-xs">XSmall</button>-->
 
 
 </body>

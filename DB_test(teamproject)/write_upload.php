@@ -3,8 +3,17 @@
 
 include "db_connect.php";
 $date = date('Y-m-d');
+
+/*$tmpfile = $_FILES['b_file']['tmp_name'];
+$origin = $_FILES['b_file']['writer'];
+$filename = iconv("UTF-8", "EUC-KR",$_FILES['b_file']['writer']);
+$folder = "upload/".$filename;
+move_uploaded_file($tmpfile,$folder);*/
+
+
+
 $sql = mq("insert into gesipan(Board_title,Board_writer,Board_contents,Board_password,Board_image)
- values('" . $_POST['title'] . "','" . $_POST['writer'] . "','" . $_POST['content'] . "','" . $_POST['pw'] . "','" . $_POST['image'] . "')"); ?>
+ values('" . $_POST['title'] . "','" . $_POST['writer'] . "','" . $_POST['content'] . "','" . $_POST['pw'] . "','" . $origin . "')"); ?>
 <script type="text/javascript">alert("글쓰기 완료되었습니다.");</script>
 <meta http-equiv="refresh" content="0 url=gesipan.php"/>
 
@@ -27,14 +36,14 @@ $sql = mq("insert into gesipan(Board_title,Board_writer,Board_contents,Board_pas
 //$result = $connect->query($query);
 //if($result){
 //    ?><!--                  <script>-->
-<!--        alert("--><?php //echo "글이 등록되었습니다."?>//");
-//        location.replace("<?php //echo $URL?>//");
+<!--        alert("--><?php //echo "글이 등록되었습니다."?>////");
+//        location.replace("<?php ////echo $URL?>////");
 //    </script>
 //    <?php
 //}
 //else{
 //    echo "FAIL";
 //}
-//
+
 //mysqli_close($connect);
-//?>
+?>

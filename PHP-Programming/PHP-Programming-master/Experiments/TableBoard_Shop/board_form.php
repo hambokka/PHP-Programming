@@ -1,5 +1,6 @@
 <?php
 #TODO: update form 인 경우, form 에 정보 표시
+echo $_GET[num];
 if(isset($_GET[num])) {
     #TODO: MySQL 테이블에서, num에 해당하는 레코드 가져오기
 // MySQL 데이터베이스 연결

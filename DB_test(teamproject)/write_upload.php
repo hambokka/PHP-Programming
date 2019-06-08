@@ -2,7 +2,6 @@
 
 
 include "db_connect.php";
-$date = date('Y-m-d');
 
 /*$tmpfile = $_FILES['b_file']['tmp_name'];
 $origin = $_FILES['b_file']['writer'];
@@ -12,8 +11,8 @@ move_uploaded_file($tmpfile,$folder);*/
 
 
 
-$sql = mq("insert into gesipan(Board_title,Board_writer,Board_contents,Board_password,Board_genre,Board_wdate)
- values('" . $_POST['title'] . "','" . $_POST['writer'] . "','" . $_POST['content'] . "','" . $_POST['pw'] . "','" . $_POST['genre'] . "','" . date("Y-m-d H:i:s") . "')"); ?>
+$sql = mq("insert into gesipan(Board_title,Board_writer,Board_contents,Board_password,Board_wdate,Board_score)
+ values('" . $_POST['title'] . "','" . $_POST['writer'] . "','" . $_POST['content'] . "','" . $_POST['pw'] . "','" . date("Y-m-d H:i:s") . "','" . $_POST['score'] . "')"); ?>
 <script type="text/javascript">alert("글쓰기 완료되었습니다.");</script>
 <meta http-equiv="refresh" content="0 url=gesipan.php"/>
 
@@ -37,8 +36,8 @@ $sql = mq("insert into gesipan(Board_title,Board_writer,Board_contents,Board_pas
 //if($result){
 //    ?><!--                  <script>-->
 <!--        alert("--><?php //echo "글이 등록되었습니다."?>////");
-//        location.replace("<?php ////echo $URL?>////");
-//    </script>
+<!--//        location.replace("--><?php //////echo $URL?><!--////");-->
+<!--//    </script>-->
 //    <?php
 //}
 //else{

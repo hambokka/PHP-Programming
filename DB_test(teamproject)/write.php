@@ -5,7 +5,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <!-- 부트스트랩 -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="B_select/dist/css/bootstrap-select.css" rel="stylesheet"/>
 
     <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
     <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
@@ -20,39 +21,64 @@
     <script src="js/bootstrap.min.js"></script>
 
 </head>
-<body>
-<div class="container" id="board_write">
+<body style="background-color: #000000">
+<div style="background-color: #000000" class="container" id="board_write">
     <h1><a href="gesipan.php">자유게시판</a></h1>
-    <h4>글을 작성하는 공간입니다.</h4>
+    <h4 style="color: #cce5ff">글을 작성하는 공간입니다.</h4>
     <div id="write_area">
         <form action="write_upload.php" method="post" enctype="multipart/form-data">
-            <div id="in_title">
-                <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
+            <div class="row">
+            <div class ="col-md-6">
+            <div class="form-group">
+                <input class="form-control" name="title" id="utitle"  placeholder="제목" maxlength="30" required/>
             </div>
-            <div class="wi_line"></div>
-            <div id="in_name">
-                <textarea name="writer" id="uname" rows="1" cols="55" placeholder="글쓴이" maxlength="100" required></textarea>
             </div>
-            <select name="genre">
-                <option value="">장르 선택</option>
-                <option value="PC/VR">PC/VR</option>
-                <option value="PS3/PS4">PS3/PS4</option>
-                <option value="Nintendo">Nintendo</option>
-                <option value="Xbox">Xbox</option>
+            </div>
+<!--            <div class="wi_line"></div>-->
+            <div class="row">
+            <div class ="col-md-6">
+            <div class="form-group">
+                <input class="form-control" name="writer" id="uname"  placeholder="작성자" maxlength="30" required/>
+            </div>
+            </div>
+            </div>
+<!--            <select name="genre">-->
+<!--                <option value="">장르 선택</option>-->
+<!--                <option value="PC/VR">PC/VR</option>-->
+<!--                <option value="PS3/PS4">PS3/PS4</option>-->
+<!--                <option value="Nintendo">Nintendo</option>-->
+<!--                <option value="Xbox">Xbox</option>-->
+<!--            </select>-->
+<!--            <div class="wi_line"></div>-->
+            <select name="score">
+                <option value="">점수 선택</option>
+                <?php
+                $sc = 0;
+                for($sc=0;$sc<=99;$sc++) {
+                    echo "<option value=$sc>$sc</option>";
+                }
+                echo "<option>$sc</option>";
+                ?>
             </select>
-            <div class="wi_line"></div>
             <div id="in_content">
-                <textarea name="content" id="ucontent" placeholder="내용" required></textarea>
+                <textarea class="form-control" name="content" id="ucontent" placeholder="내용" required></textarea>
             </div>
-            <div id="in_pw">
-                <input type="password" name="pw" id="upw"  placeholder="비밀번호" />
+
+
+
+            <div class="row">
+            <div class ="col-md-6">
+            <div class="form-group">
+                <input class="form-control" type="password" name="pw" id="upw" placeholder="비밀번호" />
+            </div>
+            </div>
             </div>
 <!--            <div id="in_file">-->
 <!--                <input type="file" value="1" name="b_file" />-->
 <!--            </div>-->
 <!--파일업로드미완성-->
             <div class="bt_se">
-                <button type="submit">글 작성</button>
+                <button type="submit"class="btn btn-primary">글 작성</button>
             </div>
         </form>
     </div>

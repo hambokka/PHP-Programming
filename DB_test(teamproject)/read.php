@@ -11,7 +11,7 @@ mysql_select_db("oty_db", $connect);
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link href="css/bootstrap.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: #000000">
 <?php
 //echo ($_GET['Board_Num']);
 $result = mysql_query("update gesipan set Board_views = Board_views + 1 where Board_Num = '$_GET[Board_Num]'", $connect);
@@ -37,13 +37,14 @@ $gesipan = $tql->fetch_array();
 //?>
 <!-- 글 불러오기 -->
 <form method="post" action="modify.php">
-<div id="board_read">
-    <h2><?php echo $gesipan[Board_title]; ?></h2>
-    <div id="user_info">
-        <?php echo $gesipan[Board_writer]; ?> <?php echo $gesipan[date]; ?> 조회:<?php echo $gesipan[Board_views]; ?>
-        <div id="bo_line"></div>
+<div style="background-color: #000000" id="board_read">
+    <h2 style="margin-top: 80px ;color: #cce5ff"><?php echo $gesipan[Board_title]; ?></h2>
+    <div style="color: #cce5ff" id="user_info">
+        작성자 : <?php echo $gesipan[Board_writer]; ?> / 작성일 : <?php echo $gesipan[Board_wdate]; ?> <!--/ 점수 : <?php echo $gesipan[Board_score];?>--> / 조회수 : <?php echo $gesipan[Board_views]; ?>
+        <font size="7"><span style="float: right;" class="label label-default">점수 : <?php echo $gesipan[Board_score];?></span></font>
+        <div id="bo_line"></div> <!--줄-->
     </div>
-    <div id="bo_content">
+    <div style="color: #cce5ff" id="bo_content">
         <?php echo $gesipan[Board_contents]; ?>
     </div>
 <!--    <div>-->
@@ -52,10 +53,11 @@ $gesipan = $tql->fetch_array();
 <!--파일업로드미완성부분-->
     <!-- 목록, 수정, 삭제 -->
     <div id="bo_ser">
-        <ul>
-            <li><a href="/DB_test(teamproject)/gesipan.php">[목록으로]</a></li>
-            <li><a href="/DB_test(teamproject)/modify.php?Board_Num=<?php echo $_GET[Board_Num]; ?>">[수정]</a></li>
-            <li><a href="/DB_test(teamproject)/delete.php?Board_Num=<?php echo $_GET[Board_Num]; ?>">[삭제]</a></li>
+        <ul style="padding-top: 300px">
+            <li class="btn btn-default"><a href="/DB_test(teamproject)/gesipan.php">목록으로</a></li>
+            <li class="btn btn-default"><a href="/DB_test(teamproject)/modify.php?Board_Num=<?php echo $_GET[Board_Num]; ?>">수정</a></li>
+            <li class="btn btn-default"><a href="/DB_test(teamproject)/delete.php?Board_Num=<?php echo $_GET[Board_Num]; ?>">삭제</a></li>
+<!--            <a href="write.php"><button type="button" class="btn btn-default">글쓰기</button></a>-->
         </ul>
     </div>
 </div>

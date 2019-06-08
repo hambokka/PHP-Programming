@@ -22,7 +22,7 @@ include "db_connect.php"
     <link rel = "stylesheet" type="text/css" href="css/style.css"/>
 
 </head>
-<body>
+<body style="background-color: #000000">
 <!--<form action="read.php" method="get">-->
 
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
@@ -31,16 +31,16 @@ include "db_connect.php"
 <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
 <script src="js/bootstrap.min.js"></script>
 
-    <div id="board_area">
-        <h1>THIS IS 게시판</h1>
-        <h4>자유롭게 글을 쓸 수 있는 게시판입니다.</h4>
+    <div style="background-color: #000000" id="board_area">
+        <h1 style="color: yellow">THIS IS 게시판</h1>
+        <h4 style="color: #cce5ff">자유롭게 글을 쓸 수 있는 게시판입니다.</h4>
         <table class = "table table-striped table-bordered table-hover">
             <thead>
-            <tr class = "text-success bg-danger">
+            <tr class = "text-success bg-info">
                 <th width="70">번호</th>
                 <th width="500">제목</th>
                 <th width="120">글쓴이</th>
-                <th width="100">기종</th>
+<!--                <th width="100">기종</th>-->
                 <th width="100">조회수</th>
             </tr>
             </thead>
@@ -93,7 +93,8 @@ include "db_connect.php"
 
 
                     <td width="120"><?php echo $gesipan['Board_writer'];?></td>
-                    <td width="100"><?php echo $gesipan['Board_genre'];?></td>
+<!--                    <td width="100">--><?php //echo $gesipan['Board_genre'];?><!--</td>-->
+<!--                기종 뺐음-->
                     <td width="100"><?php echo $gesipan['Board_views'];?></td>
                     <?$num++;?>
                 </tr>
@@ -105,7 +106,7 @@ include "db_connect.php"
             <a href="write.php"><button type="button" class="btn btn-default">글쓰기</button></a>
         </div>
         <div id="page_num">
-            <ul>
+            <ul style="color: #cce5ff">
                 <?php
                 if($page <= 1)
                 { //만약 page가 1보다 크거나 같다면

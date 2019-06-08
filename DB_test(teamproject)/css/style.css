@@ -81,6 +81,18 @@ ul li {
 }
 
 /* 게시판 목록 */
+h1{
+    margin: 50px 0px 0px 0px;
+}
+h2{
+    margin: 500px 0px 0px 0px;
+}
+h4{
+     margin: 20px 0px 0px 0px;
+}
+table{
+    margin: 60px 30px 30px 0px;
+}
 #board_area {
     width: 900px;
     position: relative;
@@ -97,7 +109,7 @@ ul li {
 }
 .list-table tbody td{
     text-align:center;
-    padding:10px 0;
+    padding:10px;
     border-bottom:1px solid #CCC; height:20px;
     font-size: 14px
 }

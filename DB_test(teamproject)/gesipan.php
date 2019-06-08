@@ -40,7 +40,7 @@ include "db_connect.php"
                 <th width="70">번호</th>
                 <th width="500">제목</th>
                 <th width="120">글쓴이</th>
-                <th width="100">장르</th>
+                <th width="100">기종</th>
                 <th width="100">조회수</th>
             </tr>
             </thead>
@@ -54,8 +54,8 @@ include "db_connect.php"
             }
             $sql = mq("select * from gesipan");
             $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
-            $list = 5; //한 페이지에 보여줄 개수
-            $block_ct = 5; //블록당 보여줄 페이지 개수
+            $list = 10; //한 페이지에 보여줄 개수
+            $block_ct = 10; //블록당 보여줄 페이지 개수
 
             $block_num = ceil($page/$block_ct); // 현재 페이지 블록 구하기
             $block_start = (($block_num - 1) * $block_ct) + 1; // 블록의 시작번호
@@ -85,7 +85,7 @@ include "db_connect.php"
                         if ($_GET['page'] < 1)
                             echo $row_num-$num;
                         else
-                            echo $row_num-$num-5*($_GET['page']-1); ?></td>
+                            echo $row_num-$num-$list*($_GET['page']-1); ?></td>
 <!--                    <td width="500" name = "B_Num" value = "--><?// echo $gesipan[Board_Num];?><!--"><a href="read.php">--><?php //echo $Board_title;?><!--</a></td>-->
                     <td width="500"><? echo $gesipan[Board_title]; ?>
 <!--                        <input type="text" name ="Test2" value =--><?// echo $gesipan[Board_writer];?><!-- />-->

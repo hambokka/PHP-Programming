@@ -9,7 +9,9 @@ $bwriter = $_POST[B_writer];
 $bpassword = $_POST[B_pw];
 $btitle = $_POST[B_title];
 $bcontent = $_POST[B_content];
-$sql = "update gesipan set Board_writer='$bwriter',Board_password ='$bpassword',Board_title='$btitle',Board_contents = '$bcontent' where Board_Num=($bno)";
+$bgenre = $_POST[B_genre];
+$bwdate = date("Y-m-d H:i:s");
+$sql = "update gesipan set Board_writer='$bwriter',Board_password ='$bpassword',Board_title='$btitle',Board_contents = '$bcontent', Board_genre = '$bgenre', Board_wdate = '$bwdate' where Board_Num=($bno)";
 //$sql = "update gesipan set Board_writer='modified',Board_password = 9999,Board_title='modified',Board_contents = 'modified' where Board_Num=($bno)";
 $result = mysql_query($sql,$connect);
 ?>

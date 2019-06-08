@@ -23,12 +23,12 @@ $gesipan = $tql->fetch_array();
 //echo $_POST[Test];
 //echo "테스트용";
 //echo $_POST[Test2];
-if($result)
-    echo"
-    <script>
-    alert($_GET[Board_Num])
-    </script>
-    ";
+//if($result)
+//    echo"
+//    <script>
+//    alert($_GET[Board_Num])
+//    </script>
+//    ";
 ?>
 
 <?php

@@ -31,6 +31,13 @@ echo  $gesipan['Board_title'];
                     <div id="in_name">
                         <textarea name="B_writer" id="uname" rows="1" cols="55" placeholder="글쓴이" maxlength="100" required><?php echo $gesipan['Board_writer']; ?></textarea>
                     </div>
+                    <select name="B_genre">
+                        <option value="">장르 선택</option>
+                        <option value="PC/VR">PC/VR</option>
+                        <option value="PS3/PS4">PS3/PS4</option>
+                        <option value="Nintendo">Nintendo</option>
+                        <option value="Xbox">Xbox</option>
+                    </select>
                     <div class="wi_line"></div>
                     <div id="in_content">
                         <textarea name="B_content" id="ucontent" placeholder="내용" required><?php echo $gesipan['Board_contents']; ?></textarea>

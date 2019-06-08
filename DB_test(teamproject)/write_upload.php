@@ -12,8 +12,8 @@ move_uploaded_file($tmpfile,$folder);*/
 
 
 
-$sql = mq("insert into gesipan(Board_title,Board_writer,Board_contents,Board_password,Board_image)
- values('" . $_POST['title'] . "','" . $_POST['writer'] . "','" . $_POST['content'] . "','" . $_POST['pw'] . "','" . $origin . "')"); ?>
+$sql = mq("insert into gesipan(Board_title,Board_writer,Board_contents,Board_password,Board_genre,Board_wdate)
+ values('" . $_POST['title'] . "','" . $_POST['writer'] . "','" . $_POST['content'] . "','" . $_POST['pw'] . "','" . $_POST['genre'] . "','" . date("Y-m-d H:i:s") . "')"); ?>
 <script type="text/javascript">alert("글쓰기 완료되었습니다.");</script>
 <meta http-equiv="refresh" content="0 url=gesipan.php"/>
 

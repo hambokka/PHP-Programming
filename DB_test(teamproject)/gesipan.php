@@ -67,7 +67,8 @@ include "db_connect.php"
             $start_num = ($page-1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
 
             $sql2 = mq("select * from gesipan order by Board_Num desc limit $start_num, $list");
-
+//            echo $row_num;
+            $num = 0; // 페이지네이션을 위한 변수
             while($gesipan = $sql2->fetch_array())
             {
                 $Board_title=$gesipan["Board_title"];
@@ -79,8 +80,12 @@ include "db_connect.php"
                 <tbody>
                 <!--<tr onclick="location.href = (<?/* echo "read.php/num=$gesipan[Board_Num]"*/?>//)">-->
                     <? echo("<tr onclick=\"location.href = ('read.php?Board_Num=$gesipan[Board_Num]')\"> ");?>
-                    <? echo $gesipan[Board_Num];?>
-                    <td width="70"><?php echo $gesipan['Board_Num']; ?></td>
+<!--                    --><?// echo $gesipan[Board_Num];?>
+                    <td width="70"><?php
+                        if ($_GET['page'] < 1)
+                            echo $row_num-$num;
+                        else
+                            echo $row_num-$num-5*($_GET['page']-1); ?></td>
 <!--                    <td width="500" name = "B_Num" value = "--><?// echo $gesipan[Board_Num];?><!--"><a href="read.php">--><?php //echo $Board_title;?><!--</a></td>-->
                     <td width="500"><? echo $gesipan[Board_title]; ?>
 <!--                        <input type="text" name ="Test2" value =--><?// echo $gesipan[Board_writer];?><!-- />-->
@@ -90,6 +95,7 @@ include "db_connect.php"
                     <td width="120"><?php echo $gesipan['Board_writer'];?></td>
                     <td width="100"><?php echo $gesipan['Board_genre'];?></td>
                     <td width="100"><?php echo $gesipan['Board_views'];?></td>
+                    <?$num++;?>
                 </tr>
                 </tbody>
             <?php } ?>

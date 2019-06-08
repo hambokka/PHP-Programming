@@ -20,6 +20,19 @@
     <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
     <script src="js/bootstrap.min.js"></script>
 
+    <!--썸머노트-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">-->
+<!--    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>-->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>-->
+<!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>-->
+    <?php
+    $target_dir = "upload/";
+    $target_file = $target_dir.basename($_FILES["uploadfile"]["title"]);
+    $filetype = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+    ?>
 </head>
 <body style="background-color: #000000">
 <div style="background-color: #000000" class="container" id="board_write">
@@ -76,7 +89,6 @@
 <!--            <div id="in_file">-->
 <!--                <input type="file" value="1" name="b_file" />-->
 <!--            </div>-->
-<!--파일업로드미완성-->
             <div class="bt_se">
                 <button type="submit"class="btn btn-primary">글 작성</button>
             </div>

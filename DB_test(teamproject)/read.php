@@ -38,14 +38,14 @@ $gesipan = $tql->fetch_array();
 <!-- 글 불러오기 -->
 <form method="post" action="modify.php">
 <div style="background-color: #000000" id="board_read">
-    <h2 style="margin-top: 80px ;color: #cce5ff"><?php echo $gesipan[Board_title]; ?></h2>
-    <div style="color: #cce5ff" id="user_info">
+    <h2 style="margin-top: 80px; color: #ffffff"><?php echo $gesipan[Board_title]; ?></h2>
+    <div style="color: #ffffff" id="user_info">
         작성자 : <?php echo $gesipan[Board_writer]; ?> / 작성일 : <?php echo $gesipan[Board_wdate]; ?> <!--/ 점수 : <?php echo $gesipan[Board_score];?>--> / 조회수 : <?php echo $gesipan[Board_views]; ?>
         <font size="7"><span style="float: right;" class="label label-default">점수 : <?php echo $gesipan[Board_score];?></span></font>
         <div id="bo_line"></div> <!--줄-->
     </div>
-    <div style="color: #cce5ff" id="bo_content">
-        <?php echo $gesipan[Board_contents]; ?>
+    <div style="color: #ffffff" >
+        <textarea class="styling" readonly><?php echo $gesipan[Board_contents]; ?></textarea>
     </div>
 <!--    <div>-->
 <!--        파일 : <a href="upload/--><?php //echo $gesipan[Board_image];?><!--" download>--><?php //echo $gesipan[Board_image]; ?><!--</a>-->
@@ -53,10 +53,10 @@ $gesipan = $tql->fetch_array();
 <!--파일업로드미완성부분-->
     <!-- 목록, 수정, 삭제 -->
     <div id="bo_ser">
-        <ul style="padding-top: 300px">
-            <li class="btn btn-default"><a href="/DB_test(teamproject)/gesipan.php">목록으로</a></li>
-            <li class="btn btn-default"><a href="/DB_test(teamproject)/modify.php?Board_Num=<?php echo $_GET[Board_Num]; ?>">수정</a></li>
-            <li class="btn btn-default"><a href="/DB_test(teamproject)/delete.php?Board_Num=<?php echo $_GET[Board_Num]; ?>">삭제</a></li>
+        <ul>
+            <li class="btn btn-default buttonstyling"><a href="/DB_test(teamproject)/gesipan.php">목록으로</a></li>
+            <li class="btn btn-default buttonstyling"><a href="/DB_test(teamproject)/modify.php?Board_Num=<?php echo $_GET[Board_Num]; ?>">수정</a></li>
+            <li class="btn btn-default buttonstyling"><a href="/DB_test(teamproject)/delete.php?Board_Num=<?php echo $_GET[Board_Num]; ?>">삭제</a></li>
 <!--            <a href="write.php"><button type="button" class="btn btn-default">글쓰기</button></a>-->
         </ul>
     </div>

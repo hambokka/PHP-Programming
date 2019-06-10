@@ -1,6 +1,42 @@
 write.php 에 쓰는것
 
 @charset "utf-8";
+#styling input{
+    color: #ffffff;
+    border-color: #8c8c8c;
+    border-width: 5px;
+    background-color: #323232;
+}
+#styling textarea{
+    color: #ffffff;
+    width: 100%;
+    height: 500px;
+    background-color: #323232;
+    border-width: 5px;
+    border-color: #8c8c8c;
+    margin-top:20px;
+    resize: none;
+}
+.styling {
+    color: #ffffff;
+    width: 100%;
+    height: 500px;
+    background-color: #323232;
+    border-width: 5px;
+    border-color: #8c8c8c;
+    margin-top:20px;
+    resize: none;
+}
+.styling_input{
+    color: #ffffff;
+    border-color: #8c8c8c;
+    border-width: 5px;
+    background-color: #323232;
+    width: 100%;
+}
+.buttonstyling{
+    padding-top: 20px;
+}
 #board_write {
     width:900px;
     position:relative;

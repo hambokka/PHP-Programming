@@ -32,16 +32,16 @@ include "db_connect.php"
 <script src="js/bootstrap.min.js"></script>
 
     <div style="background-color: #000000" id="board_area">
-        <h1 style="color: yellow">THIS IS 게시판</h1>
-        <h4 style="color: #cce5ff">자유롭게 글을 쓸 수 있는 게시판입니다.</h4>
-        <table class = "table table-striped table-bordered table-hover">
+        <h1 style="color: #FFFFFF">THIS IS 게시판</h1>
+        <h4 style="color: #ffffff">자유롭게 글을 쓸 수 있는 게시판입니다.</h4>
+        <table style="border-width: 10px; border-color: #323232; border-radius: 15px " class = "table table-striped table-bordered table-hover">
             <thead>
-            <tr class = "text-success bg-info">
-                <th width="70">번호</th>
-                <th width="500">제목</th>
-                <th width="120">글쓴이</th>
+            <tr style="background-color: #1c1f2b" class = "text-success">
+                <th style="color: #ffffff" width="70">번호</th>
+                <th style="color: #ffffff" width="500">제목</th>
+                <th style="color: #ffffff" width="120">글쓴이</th>
 <!--                <th width="100">기종</th>-->
-                <th width="100">조회수</th>
+                <th style="color: #ffffff" width="100">조회수</th>
             </tr>
             </thead>
             <?php
@@ -165,7 +165,7 @@ include "db_connect.php"
 </div>
 
 
-
+<!--<img src = "aa.png"/>-->
 
 
 

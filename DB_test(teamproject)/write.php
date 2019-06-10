@@ -37,13 +37,13 @@
 <body style="background-color: #000000">
 <div style="background-color: #000000" class="container" id="board_write">
     <h1><a href="gesipan.php">자유게시판</a></h1>
-    <h4 style="color: #cce5ff">글을 작성하는 공간입니다.</h4>
+    <h4 style="color: #ffffff">글을 작성하는 공간입니다.</h4>
     <div id="write_area">
         <form action="write_upload.php" method="post" enctype="multipart/form-data">
             <div class="row">
             <div class ="col-md-6">
             <div class="form-group">
-                <input class="form-control" name="title" id="utitle"  placeholder="제목" maxlength="30" required/>
+                <input class="styling_input" name="title" id="utitle"  placeholder="제목" maxlength="30" required/>
             </div>
             </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="row">
             <div class ="col-md-6">
             <div class="form-group">
-                <input class="form-control" name="writer" id="uname"  placeholder="작성자" maxlength="30" required/>
+                <input class="styling_input" name="writer" id="uname"  placeholder="작성자" maxlength="30" required/>
             </div>
             </div>
             </div>
@@ -73,8 +73,8 @@
                 echo "<option>$sc</option>";
                 ?>
             </select>
-            <div id="in_content">
-                <textarea class="form-control" name="content" id="ucontent" placeholder="내용" required></textarea>
+            <div>
+                <textarea class="styling" name="content" id="ucontent" placeholder="내용" required></textarea>
             </div>
 
 
@@ -82,7 +82,7 @@
             <div class="row">
             <div class ="col-md-6">
             <div class="form-group">
-                <input class="form-control" type="password" name="pw" id="upw" placeholder="비밀번호" />
+                <input class="styling_input" type="password" name="pw" id="upw" placeholder="비밀번호" />
             </div>
             </div>
             </div>

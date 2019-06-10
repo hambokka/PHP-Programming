@@ -33,7 +33,7 @@
 <body style="background-color: #000000">
     <div style="background-color: #000000" class="container" id="board_write">
         <h1><a href="gesipan.php">자유게시판</a></h1>
-        <h4 style="color: #cce5ff">글을 수정합니다.</h4>
+        <h4 style="color: #ffffff">글을 수정합니다.</h4>
             <div id="write_area">
                 <form action="modify_upload.php/<?php echo $gesipan['Board_Num']; ?>" method="post">
                     <!---->
@@ -41,7 +41,7 @@
                     <div class="row">
                     <div class ="col-md-6">
                     <div class="form-group">
-                        <input class="form-control" name="B_title" id="utitle" placeholder="제목" maxlength="30" required value=" <?php echo $gesipan['Board_title']; ?>"></input>
+                        <input class="styling_input" name="B_title" id="utitle" placeholder="제목" maxlength="30" required value=" <?php echo $gesipan['Board_title']; ?>"></input>
                     </div>
                     </div>
                     </div>
@@ -49,7 +49,7 @@
                     <div class="row">
                     <div class ="col-md-6">
                     <div class="form-group">
-                        <input class="form-control" name="B_writer" id="uname" placeholder="작성자" maxlength="300" required value=" <?php echo $gesipan['Board_writer']; ?>"></input>
+                        <input class="styling_input" name="B_writer" id="uname" placeholder="작성자" maxlength="300" required value=" <?php echo $gesipan['Board_writer']; ?>"></input>
                     </div>
                     </div>
                     </div>
@@ -71,13 +71,13 @@
 <!--                        <option value="Xbox">Xbox</option>-->
 <!--                    </select>-->
 <!--                    <div class="wi_line"></div>-->
-                    <div id="in_content">
-                        <textarea class="form-control" name="B_content" id="ucontent" placeholder="내용" required><?php echo $gesipan['Board_contents']; ?></textarea>
+                    <div>
+                        <textarea class="styling" name="B_content" id="ucontent" placeholder="내용" required><?php echo $gesipan['Board_contents']; ?></textarea>
                     </div>
                     <div class="row">
                     <div class ="col-md-6">
                     <div class="form-group">
-                        <input class="form-control" type="password" name="B_pw" id="upw"  placeholder="비밀번호"/>
+                        <input class="styling_input" type="password" name="B_pw" id="upw"  placeholder="비밀번호"/>
                     </div>
                     </div>
                     </div>

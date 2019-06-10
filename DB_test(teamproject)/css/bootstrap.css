@@ -182,11 +182,12 @@ optgroup {
 }
 table {
   border-spacing: 0;
-  border-collapse: collapse;
+  border-collapse: unset;
+  border-color: #0f0f0f;
 }
 td,
 th {
-  padding: 0;
+  padding: 5px;
 }
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
